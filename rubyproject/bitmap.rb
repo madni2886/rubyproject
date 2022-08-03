@@ -1,14 +1,17 @@
 class BitMap
-  def initialize
-    super
-    @command = ""
-    @counter = 0
-    @arr_2d = "0{" "}"
-    @row=0
-    @col=0
+  attr_reader :command,:counter,:arr_2d,:row,:col
+  def open_file(file)
+    begin
+      @command = open(file).read.split
+    rescue Errno::ENOENT
+      p 'File not found'
+      exit
+    else
+      @command=@command.map(&:upcase)
+      check_command
+    end
   end
-
-  def init
+  def initialize_command
     @row    = @command[@counter + 1].to_i
     @col    = @command[@counter + 2].to_i
 
@@ -17,57 +20,20 @@ class BitMap
       exit
     else
       @arr_2d = Array.new(@col) { Array.new(@row, "O") }
-
-
     end
   end
-  def exception
+  def check_command
     if @command[0] != "I"
       print 'command not initialize'
       exit
-
-
     end
     length_i=@command.count("I")
-    length_h=@command.count("H")
-    length_v=@command.count("V")
-    if length_i > 1||length_h > 1||length_v > 1
+    if length_i > 1
       print 'more then 1 initializer '
       exit
     end
   end
-  def open(file)
-    if !File.exist?(file)
-      print "File is not correct"
-    elsif File.zero?(file)
-      print 'file is empty'
-
-    else
-
-      @command = File.open(file).read.split
-      @command=@command.map(&:upcase)
-      exception
-
-    end
-  end
-  def show
-    if @arr_2d.length == 0
-      print "nothing to show"
-    else
-      @arr_2d.each { | x |
-
-        puts x.join(" ")
-
-
-      }
-    end
-
-  end
-  def clear
-
-    @arr_2d = Array.new(@row) { Array.new(@col, "O") }
-  end
-  def pixels
+  def set_pixels
     row = @command[@counter + 2].to_i-1
     col = @command[@counter + 1].to_i - 1
     color =@command[@counter + 3]
@@ -76,9 +42,8 @@ class BitMap
     else
       @arr_2d[row][col] = "#{color}"
     end
-
   end
-  def horizontal
+  def set_horizontal
     col1 = @command[@counter + 1].to_i
     col2 = @command[@counter + 2].to_i
     row = @command[@counter + 3].to_i
@@ -87,7 +52,7 @@ class BitMap
       exit
     elsif col1>col2
       print 'column range size is not correct in horizontal'
-      exit()
+      exit
     else
       (col1 .. col2).each { | index |
 
@@ -95,7 +60,7 @@ class BitMap
       }
     end
   end
-  def vertical
+  def set_vertical
     col  = @command[1 + @counter].to_i-1
     row1 = @command[@counter + 2].to_i-1
     row2 = @command[@counter + 3].to_i-1
@@ -113,30 +78,46 @@ class BitMap
       }
     end
   end
+  def continue
+    # code here
+  end
   def compute
     @counter=0
     while @counter <@command.length
       case @command[@counter]
 
       when "I"
-        init
+        initialize_command
       when  "L"
-        pixels
+        set_pixels
       when "C"
         clear
       when "S"
         show
       when "V"
-
-        vertical
+        set_vertical
       when "H"
-        horizontal
-
+        set_horizontal
       end
       @counter += 1
     end
   end
+  def show
+    if @arr_2d.eql?nil
+      print "nothing to show"
+      exit
+    else
+      print'*******************************BITMAP CONVERTOR**********************************************'
+      puts
+      @arr_2d.each { | x |
+        puts x.join(" ") }
+      puts
+    end
+  end
+  def clear
+    @arr_2d = Array.new(@row) { Array.new(@col, "O") }
+  end
 end
 bit_set=BitMap.new
-bit_set.open("text.txt")
+bit_set.open_file("text.txt")
 bit_set.compute
