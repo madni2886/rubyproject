@@ -1,0 +1,10 @@
+<code_scheme name="Default" version="173">
+  <Ruby>
+    <option name="SPACE_WITHIN_PIPES" value="true" />
+    <option name="SPACE_AROUND_RANGE_OPERATORS" value="true" />
+  </Ruby>
+  <codeStyleSettings language="ruby">
+    <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+    <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="false" />
+  </codeStyleSettings>
+</code_scheme>
