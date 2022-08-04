@@ -1,0 +1,15 @@
+<application>
+  <component name="FindSettings">
+    <mask>*.css</mask>
+    <mask>*.html</mask>
+    <mask>*.xml</mask>
+    <mask>*.ru</mask>
+    <mask>*.gemspec</mask>
+    <mask>*.thor</mask>
+    <mask>*.jbuilder</mask>
+    <mask>*.rake</mask>
+    <mask>*.rbw</mask>
+    <mask>*.rbi</mask>
+    <mask>*.rb</mask>
+  </component>
+</application>
