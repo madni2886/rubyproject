@@ -5,6 +5,5 @@
   </Ruby>
   <codeStyleSettings language="ruby">
     <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
-    <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="false" />
   </codeStyleSettings>
 </code_scheme>
