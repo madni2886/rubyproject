@@ -3,7 +3,4 @@
     <option name="SPACE_WITHIN_PIPES" value="true" />
     <option name="SPACE_AROUND_RANGE_OPERATORS" value="true" />
   </Ruby>
-  <codeStyleSettings language="ruby">
-    <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
-  </codeStyleSettings>
 </code_scheme>
