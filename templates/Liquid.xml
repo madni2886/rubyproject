@@ -1,0 +1,123 @@
+<templateSet group="Liquid">
+  <template name="re" value="{% render $NAME$$END$ %}" description="render tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="if" value="{% if $CONDITION$ %}&#10;$SELECTION$&#10;{% endif %}" description="if block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="un" value="{% unless $CONDITION$ %}&#10;$SELECTION$&#10;{% endunless %}" description="unless block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="eli" value="{% elsif $CONDITION$ %}&#10;$END$" description="elsif branch" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="CONDITION" expression="" defaultValue="&quot;condition&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="els" value="{% else %}&#10;$END$" description="else branch" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="st" value="{% style %}&#10;$SELECTION$&#10;{% endstyle %}" description="style block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="ra" value="{% raw %}&#10;$SELECTION$&#10;{% endraw %}" description="raw block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="ca" value="{% capture $VARIABLE$ %}&#10;$SELECTION$&#10;{% endcapture %}" description="capture block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ic" value="{% ifchanged %}&#10;$END$$SELECTION$&#10;{% endifchanged %}" description="ifchanged block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="cas" value="{% case $VARIABLE$ %}&#10;    {% when $VALUE$ %}&#10;$SELECTION$&#10;{% endcase %}" description="case block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="wh" value="{% when $VALUE$ %}&#10;$END$" description="when branch" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fo" value="{% for $VARIABLE$ in $ARRAY$ $MODIFIERS$ %}&#10;$SELECTION$&#10;{% endfor %}" description="for block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="MODIFIERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ta" value="{% tablerow $VARIABLE$ in $ARRAY$ $MODIFIERS$ %}&#10;$SELECTION$&#10;{% endtablerow %}" description="tablerow block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="MODIFIERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="hi" value="{% highlight $LANGUAGE$ %}&#10;$SELECTION$&#10;{% endhighlight %}" description="highlight block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="LANGUAGE" expression="" defaultValue="&quot;ruby&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="fm" value="{% form $NAME$$ARGS$ %}&#10;$SELECTION$&#10;{% endform %}" description="form block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="pa" value="{% paginate $COLLECTION$ by $DIVDER$ %}&#10;$SELECTION$&#10;{% endpaginate %}" description="paginate block" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="COLLECTION" expression="" defaultValue="&quot;collection&quot;" alwaysStopAt="true" />
+    <variable name="DIVDER" expression="" defaultValue="&quot;42&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="lq" value="{% liquid&#10;$END$ &#10;%}" description="liquid tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="se" value="{% section $NAME$ %}" description="section tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="la" value="{% layout $NAME$$END$ %}" description="layout tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="as" value="{% assign $VARIABLE$ = $VALUE$$END$ %}" description="assign tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="inc" value="{% increment $VARIABLE$ %}&#10;$END$" description="increment tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="dec" value="{% decrement $VARIABLE$ %}&#10;$END$" description="decrement tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VARIABLE" expression="" defaultValue="&quot;variable&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="bre" value="{% break %}&#10;$END$" description="break tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="con" value="{% continue %}&#10;$END$" description="continue tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <context />
+  </template>
+  <template name="ln" value="{% link $NAME$$END$ %}" description="link tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="pu" value="{% post_url $NAME$$END$ %}" description="post_url tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="cy" value="{% cycle $VALUE$$END$ %}" description="cycle tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ec" value="{% echo $VALUE$$END$ %}" description="echo tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="VALUE" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="in" value="{% include $NAME$$END$ %}" description="include tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ir" value="{% include_relative $NAME$$END$ %}" description="include_relative tag" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>
